@@ -1,6 +1,6 @@
 const productContainer = document.getElementById("products-container");
 
-const productsList  = ["Black Tea", "Green Tea"];
+const productsList  = ["Coffee", "Green Tea"];
 
 
 const blackTea = document.createElement("div");
