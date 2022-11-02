@@ -15,3 +15,4 @@ greenTea.classList.add("product");
 
 productContainer.appendChild(blackTea);
 productContainer.appendChild(greenTea);
+console.log('done');
