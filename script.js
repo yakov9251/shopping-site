@@ -3,7 +3,11 @@ debugger;
 const product = {
     name: 'Black Tea',
     amount: 33,
-    price: 20
+    price: 20,
+    image : {
+        src: "http://www.mysite.com/myimage.jpg",
+        alt: "black tea image"
+    }
 }
 
 //create main element
