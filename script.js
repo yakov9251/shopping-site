@@ -6,15 +6,16 @@ productsList.splice(0,1);
 
 
 const blackTea = document.createElement("div");
-const greenTea = document.createElement("div");
-
 blackTea.innerHTML = productsList[0];
-greenTea.innerHTML = productsList[1];
-
-
 blackTea.classList.add("product");
-greenTea.classList.add("product");
-
 productContainer.appendChild(blackTea);
+
+
+const greenTea = document.createElement("div");
+greenTea.innerHTML = productsList[1];
+greenTea.classList.add("product");
 productContainer.appendChild(greenTea);
+
+
+
 console.log('done');
