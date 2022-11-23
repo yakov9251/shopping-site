@@ -1,6 +1,10 @@
 const productContainer = document.getElementById("products-container");
+const headerContainer = document.getElementById('header');
 
 const productsArray = [];
+const headerData = {
+    title: 'My Shopping Site'
+};
 
 productsArray.push({
     name: 'Black Tea',
@@ -27,19 +31,27 @@ productsArray.push({
     price: 1
 });
 
-for(let i=0; i<productsArray.length;i++) {
+const productsHTML = createProductList(productsArray);
+productContainer.appendChild(productsHTML);
 
-    const productDIV = document.createElement("div");
-    productDIV.classList.add("product");
+const headerHTML = createHeader(headerData);
+headerContainer.appendChild(headerHTML);
 
-    const productNameDIV = document.createElement("div");
-    productNameDIV.innerHTML = productsArray[i].name;
-    productDIV.appendChild(productNameDIV);
 
-    const productAmountDIV = document.createElement("div");
-    productAmountDIV.innerHTML = "Amount: " + productsArray[i].amount;
-    productDIV.appendChild(productAmountDIV);
 
-    productContainer.appendChild(productDIV);
+// for(let i=0; i<productsArray.length;i++) {
 
-}
+//     const productDIV = document.createElement("div");
+//     productDIV.classList.add("product");
+
+//     const productNameDIV = document.createElement("div");
+//     productNameDIV.innerHTML = productsArray[i].name;
+//     productDIV.appendChild(productNameDIV);
+
+//     const productAmountDIV = document.createElement("div");
+//     productAmountDIV.innerHTML = "Amount: " + productsArray[i].amount;
+//     productDIV.appendChild(productAmountDIV);
+
+//     productContainer.appendChild(productDIV);
+
+// }
