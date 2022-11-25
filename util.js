@@ -2,29 +2,50 @@
 
 //must have product.title
 function createProduct(product) {
-    //TODO: add logic to create product function;
-    //stub
+    const productHTML = document.createElement("div");
 
-    const productHTML = document.createElement('div');
-    productHTML.innerHTML = product.title;
-
+    if (product && typeof product === "object") {
+      productHTML.classList.add("product");
+      //Create product name div
+      const productNameDIV = document.createElement("div");
+      productNameDIV.innerHTML = product.name;
+      productHTML.appendChild(productNameDIV);
+      
+      const productAmountDIV = document.createElement("div");
+      productAmountDIV.innerHTML = "Amount: " + product.amount;
+      productHTML.appendChild(productAmountDIV);
+      
+      const productPriceDIV = document.createElement('div');
+      productPriceDIV.innerHTML = product.price;
+      productHTML.appendChild(productNameDIV);
+      console.log(productHTML);
+    } else {
+      throw console.error("not object");
+    }
     return productHTML;
 }
 
 function createProductList(productList) {
-    //TODO: add logic
-    //stub
-
-    const productListElement = document.createElement('div');
-    productListElement.innerHTML = 'PRODUCTS LIST HERE';
+    const productListElement = document.createElement("div");
+    if (productList && productList.length) {
+      for (let i = 0; i < productList.length; i++) {
+        const product = createProduct(productList[i]);
+        productListElement.appendChild(product);
+      }
+    } else {
+      productListElement.innerHTML = "No Items.";
+    }
     return productListElement;
 }
 
 function createHeader(headerObject) {
-    //TODO: add logic
-
-    //stub
-    const headerElement = document.createElement('div');
-    headerElement.innerHTML = 'HEADER HERE';
+    const headerElement = document.createElement("div");
+    if (headerObject && typeof headerObject === "object") {
+        const h2 = document.createElement('h2');
+        h2.innerHTML =  headerObject.title;
+        headerElement.appendChild(h2);
+    }else{
+        console.log('error')
+    }
     return headerElement;
 }
